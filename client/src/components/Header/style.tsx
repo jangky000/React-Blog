@@ -1,3 +1,4 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 export const HeaderLayout = styled.div`
@@ -22,4 +23,36 @@ export const MobileMenuBtn = styled.button`
 
 export const GNB = styled.nav`
     float: right;
+    display: flex;
+`
+
+export const NavList = styled.ul`
+    display: flex;
+    li {
+        margin: 0 1rem;
+    }
+`
+
+export const IconBtn = styled.button`
+    border: none;
+    background-color: transparent;
+    &:hover {
+        cursor: pointer;
+    }
+`
+
+export const SearchInput = styled.input`
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+`
+
+export const hide = css`
+    overflow: hidden;
+    width: 0;
+    height: 0;
+`
+
+export const show = css`
+    transition: all 0.3s ease-in-out; 
 `
