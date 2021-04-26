@@ -44,15 +44,20 @@ export const IconBtn = styled.button`
 export const SearchInput = styled.input`
     background-color: transparent;
     border: none;
+`
+export const SearchDiv = styled.div`
+    visibility: visible;
+    opacity: 1;
+    max-width: 500px;
+    max-height: 500px;
+    transition: all 1s ease-in-out;
     border-bottom: 1px solid black;
-`
+    position: relative;
 
-export const hide = css`
-    overflow: hidden;
-    width: 0;
-    height: 0;
-`
-
-export const show = css`
-    transition: all 0.3s ease-in-out; 
+    &.hide{
+        visibility: hidden;
+        opacity: 0;
+        max-width: 0;
+        max-height: 0;
+    }
 `
