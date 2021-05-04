@@ -15,15 +15,16 @@ export const HeaderLayout = styled.div`
         color: white;
         button {
             color: white;
-            transition: all 1s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
-        transition: all 1s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
 `
 
 export const Title = styled.h1`
     float: left;
     font-size: 2rem;
+    font-weight: bold;
 `
 
 export const MobileMenuBtn = styled.button`
