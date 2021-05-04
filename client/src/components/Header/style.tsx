@@ -8,7 +8,17 @@ export const HeaderLayout = styled.div`
     left: 0;
     right: 0;
     z-index: 999;
-    background-color: gray;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    &.scroll{
+        background-color: rgba(0, 0, 0, 1);
+        color: white;
+        button {
+            color: white;
+            transition: all 1s ease-in-out;
+        }
+        transition: all 1s ease-in-out;
+    }
 `
 
 export const Title = styled.h1`
