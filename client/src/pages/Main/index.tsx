@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import moment from 'moment'
 import {MainLayout} from './style'
 import {Header} from '../../components/Header'
 
@@ -78,7 +79,7 @@ const Card = ()=>{
             marginLeft: '1rem'
           }}
           >
-            id
+            id...
           </div>
         </div>
       </div>
@@ -108,8 +109,54 @@ const RecommendSection = ():ReactElement=>{
 
 const Post = ():ReactElement=>{
   return (
-    <div>
-      this is Post
+    <div style={{margin: '1rem', background:'rgba(0,0,0,0.1)'}}>
+      {/* title */}
+      <h3 className="title">Title...</h3>
+      <div className="date">{moment().format('yyyy.MM.DD')}</div>
+      <p className="description">
+        description...
+      </p>
+
+      {/* img */}
+      <div className="img">
+        <img src="/" alt="" width="100%" height="333px" />
+      </div>
+
+      {/* tags */}
+      <div className="tags">
+        tags...
+      </div>
+
+      {/* author */}
+      <div className="author" style={{display:'flex'}}>
+        <div
+          className="author-thumbnail"
+          style={{
+            background:'rgba(0,0,0,0.1)',
+            width: '3rem',
+            height:'3rem',
+            borderRadius:'50%',
+            overflow:'hidden'
+          }}
+        >
+          <img src="/" alt="thumbnail" width='100%' height="100%" />
+        </div>
+        <div className="author-text" style={{marginLeft: '1rem'}}>
+          {/* id */}
+          <div
+            className="author-id"
+            style={{
+            fontSize: '1.2rem',
+          }}
+          >
+            id...
+          </div>
+          <div className="author-introduce">
+            introduce...
+          </div>
+        </div>
+
+      </div>
     </div>
 )
 }
@@ -123,17 +170,55 @@ const Posts = ():ReactElement=>{
 )
 }
 
-// 
-const Aside = ():ReactElement=>{
-  return <div style={{width: '400px', background:'rgba(0,0,0,0.1)',}}>this is Aside</div>
+const Tag = ():ReactElement=>{
+  return (
+    <div
+      className='tag'
+      style={{
+        margin: '0.5rem',
+        padding: '0.5rem',
+        backgroundColor:'white',
+        borderRadius:'8px'
+      }}
+    >
+      {`tag${  Math.round(Math.random()*10)}`}
+    </div>
+)
 }
 
-// 
+const Tags = ():ReactElement=>{
+  const tagsData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ]
+  const list = tagsData.map(()=><Tag key={Math.random()} />)
+  return (
+    <div style={{margin: '0.5rem', padding:'0.5rem', background:'rgba(0,0,0,0.1)', display:'flex', flexWrap: 'wrap'}}>
+      {list}
+    </div>
+)
+}
+
+
+const Aside = ():ReactElement=>{
+  const tagGroupData = [0, 0];
+  const list = tagGroupData.map((item)=> (
+    <div key={Math.random()}>
+      <h3 className="title" style={{marginTop: '2rem'}}>
+        Title...
+      </h3>
+      <Tags  />
+    </div>
+)
+  )
+  return (
+    <div style={{width: '400px', background:'rgba(0,0,0,0.1)'}}>{list}</div>
+)
+}
+
+
 const PostSection = ():ReactElement=>{
   return (
     <div style={{width: '90%', margin: '2rem auto'}}>
-      <h3>Recent Post</h3>
-      <div style={{display:'flex'}}>
+      <h3 style={{fontSize:'1.5rem', fontWeight: 'bold'}}>Recent Post</h3>
+      <div style={{display:'flex', margin: '10px' }}>
         <Posts />
         <Aside />
       </div>
